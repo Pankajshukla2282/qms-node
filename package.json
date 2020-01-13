@@ -1,0 +1,19 @@
+{
+  "name": "ques",
+  "version": "1.0.0",
+  "description": "Questions management",
+  "main": "handler.js",
+  "scripts": {
+    "offline": "sls offline start --skipCacheInvalidation"
+  },
+  "keywords": [],
+  "author": "Pankaj Shukla",
+  "license": "MIT",
+  "devDependencies": {
+    "mariadb": "^2.1.5",
+    "sequelize": "^5.21.3",
+    "serverless": "^1.60.5",
+    "serverless-offline": "^5.12.1"
+  },
+  "dependencies": {}
+}

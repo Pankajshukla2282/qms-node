@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+  h1 Questions
+  dl#ques
+    for que in ques
+      dt= que.que_title
+      dd= que.que_description
