@@ -2,35 +2,66 @@ extends ../layout
 
 block content
   h1 Questions
-  dl#ques
-    for que in ques
-      dt= que.que_title
-      dd= que.que_description
+  
+  +carousel(1,ques)
 
-<!DOCTYPE html>
-<html>
+//- carousel caption
+mixin carousel-caption(item)
+  .carousel-caption
+    unless !item.que_title
+      h1 #{item.que_title}
+    unless !item.que_description
+      p #{item.que_description}
+    unless !item.que_choices
+      ol
+        each ch_item in item.que_choices
+          li
+            option(name="choices-" + item.que_id value="#{ch_item.val}") ch_item.text
 
-<head>
-    <title>Welcome to SurveyJS</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
-    <script src="https://unpkg.com/survey-knockout"></script>
-    <link rel="stylesheet" href="https://unpkg.com/survey-knockout/survey.css" />
-    <link rel="stylesheet" href="./index.css" />
-</head>
+//- carousel
+mixin carousel(id,items)
+  .carousel.slide(id="carousel-" + id ,data-ride="carousel")
+    //- Indicators
+    ol.carousel-indicators
+      each item,index in items
+        if(index === 0)
+          li.active(data-target="#carousel-" + id, data-slide-to=index)
+        else
+          li(data-target="#carousel-" + id, data-slide-to=index)
 
-<body>
-    <a class="fork_me_on_github" href="https://github.com/surveyjs/surveyjs-nodejs" target="_blank">
-        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67"
-            alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
-    </a>
-    <div class="survey-page-header">
-        <div class="sv_main survey-page-header-content">
-            <button onclick="window.location = '/'">&lt&nbspBack</button>
-        </div>
-    </div>
-    <div id="surveyElement">
-    </div>
-    <script src="./survey.js"></script>
-</body>
+    .carousel-inner(role="listbox")
+      each item,index in items        
+        if(index === 0)
+          .item.active
+            span=que_title
+            +carousel-caption(item)
+        else
+          .item
+            span=que_title
+            +carousel-caption(item)
 
-</html>
+    a.left.carousel-control(href="#carousel-" + id, role="button", data-slide="prev")
+      +icon("chevron-left")
+      span.sr-only Previous
+    a.right.carousel-control(href="#carousel-" + id, role="button", data-slide="next")
+      +icon("chevron-right")
+      span.sr-only Next
+
+//- Glyphicon
+mixin icon(name)
+  span.glyphicon(class="glyphicon-" + name,aria-hidden="true")
+	
+mixin icon-primary(name)
+  span.glyphicon.text-primary(class="glyphicon-" + name,aria-hidden="true")
+
+mixin icon-info(name)
+  span.glyphicon.text-info(class="glyphicon-" + name,aria-hidden="true")
+	
+mixin icon-warning(name)
+  span.glyphicon.text-warning(class="glyphicon-" + name,aria-hidden="true")
+	
+mixin icon-danger(name)
+  span.glyphicon.text-danger(class="glyphicon-" + name,aria-hidden="true")
+	
+mixin icon-success(name)
+  span.glyphicon.text-success(class="glyphicon-" + name,aria-hidden="true")

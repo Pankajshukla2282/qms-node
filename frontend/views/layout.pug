@@ -2,30 +2,43 @@
 block variables
 doctype html
 html
-  head
-    title title
-    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
-    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
-    link(rel="stylesheet", type="text/css", href="/stylesheets/style.css")
-    link(href="https://fonts.googleapis.com/css?family=Open+Sans:300", rel="stylesheet", type="text/css")
-  body.container-fixed
-    block heading
-        nav#navigation.navbar.navbar-inverse
-            div.container-fixed
-                div.navbar-header
-                    a(href="/").navbar-brand Pankaj
-                ul#navigation.nav.navbar-nav
-                    li
-                        a(href="/create") Create Exam set
-                    li
-                        a(href="/about") About & Contact
-                    li
-                        a(href="/policy") Privacy Policy
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title= title
+    link(rel="stylesheet prefetch", href="/stylesheets/bootstrap.min.css")
+    link(rel="stylesheet", type="text/css", href="/stylesheets/style.css")
+    link(rel="stylesheet", type="text/css", href="/stylesheets/carousel.css")
+    link(rel="stylesheet", type="text/css", href="https://fonts.googleapis.com/css?family=Open+Sans:300")
+  
+  body
+    block heading
+      div.navbar-wrapper
+        div.container
+          nav#navigation.navbar.navbar-inverse
+            div.container-fixed
+              div.navbar-header
+                a(href="/").navbar-brand Pankaj
+              ul#navigation.nav.navbar-nav
+                li
+                  a(href="/create") Create Exam set
+                li
+                  a(href="/about") About & Contact
+                li
+                  a(href="/policy") Privacy Policy
+    div.container
+      block content
 
-    div.container
-        block content
+    div.container
+      block section1
+  
+    div.container
+      block section2
 
-    block footer
-        footer.footer
-            div
-                p Friend Knower
+    block footer
+      footer.footer
+        div.container
+          p &copy; 2020 Company, Inc. &middot; #[a(href="#") Privacy] &middot; #[a(href="#") Terms]
+    script(src="/js/jquery.min.js")
+    script(src="/js/bootstrap.min.js")

@@ -1,4 +1,5 @@
 module.exports = (sequelize, type) => {
+  console.log("q model")
   return sequelize.define('question', {
     que_id: {
       type: type.INTEGER,
@@ -9,4 +10,5 @@ module.exports = (sequelize, type) => {
 	  que_related_info: type.STRING,
     que_description: type.STRING
   })
+  .belongsTo(Question_Choice, {through: 'que_id'})
 }

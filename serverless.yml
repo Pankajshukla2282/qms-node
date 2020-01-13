@@ -74,6 +74,12 @@ functions:
          path: ques/{id}
          method: delete
          cors: true
-
+  exam:
+    handler: handler.exam
+    events:
+      - http:
+          path: exam/{id}
+          method: get
+          cors: true
 plugins:
   - serverless-offline

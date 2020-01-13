@@ -9,4 +9,5 @@ module.exports = (sequelize, type) => {
 	  choice_related_info: type.STRING,
     choice_description: type.STRING
   })
+  .belongsTo(Question_Choice, {through: 'choice_id'})
 }
