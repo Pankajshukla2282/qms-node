@@ -1,4 +1,4 @@
-service: ques
+service: que_ms
 
 custom:
   secrets: ${file(secrets.json)}
@@ -12,9 +12,10 @@ provider:
     NODE_ENV: ${self:custom.secrets.NODE_ENV}
     DB_NAME: ${self:custom.secrets.DB_NAME}
     DB_USER: ${self:custom.secrets.DB_USER}
-    DB_PASSWORD: ${self:custom.secrets.DB_PASSWORD}
+    DB_PASS: ${self:custom.secrets.DB_PASS}
     DB_HOST: ${self:custom.secrets.DB_HOST}
     DB_PORT: ${self:custom.secrets.DB_PORT}
+    DB_DIALECT: ${self:custom.secrets.DB_DIALECT}
   vpc:
     securityGroupIds:
       - ${self:custom.secrets.SECURITY_GROUP_ID}
@@ -25,61 +26,10 @@ provider:
       - ${self:custom.secrets.SUBNET4_ID}
 
 functions:
-  home:
-    handler: handler.home
+  qmsFunc:
+    handler: index.handler
     events:
-      - http:
-          path: /
-          method: get
-          cors: true
-  healthCheck:
-    handler: handler.healthCheck
-    events:
-      - http:
-          path: /health
-          method: get
-          cors: true
-  create:
-    handler: handler.create
-    events:
-      - http:
-          path: ques
-          method: post
-          cors: true
-  getOne:
-    handler: handler.getOne
-    events:
-      - http:
-          path: ques/{id}
-          method: get
-          cors: true
-  getAll:
-    handler: handler.getAll
-    events:
-     - http:
-         path: ques
-         method: get
-         cors: true
-  update:
-    handler: handler.update
-    events:
-     - http:
-         path: ques/{id}
-         method: put
-         cors: true
-  destroy:
-    handler: handler.destroy
-    events:
-     - http:
-         path: ques/{id}
-         method: delete
-         cors: true
-  exam:
-    handler: handler.exam
-    events:
-      - http:
-          path: exam/{id}
-          method: get
-          cors: true
+      - http: ANY /
+      - http: 'ANY {proxy+}'
 plugins:
   - serverless-offline
