@@ -1,8 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  ul
-    li Visit the <a href="/users">Users</a> page
-    li Visit the <a href="/ques">Questions</a> page
+  section#hero
+    div.container.pt-7.pb-6.text-white
+      div.row.align-items-center.text-center.text-md-left
+        div.col-lg-5
+          h1 Trello lets you work more collaboratively and get more done.
+          p.lead Trello’s boards, lists, and cards enable you to organize and prioritize your projects in a fun, flexible, and rewarding way.
+        div.col-lg-6.offset-lg-1
+          img(src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/308998dcb3ed5ab3d01217a4d24ffa03/hero-a.svg" alt="" width="582").img-fluid
+        form(method="POST" action="/signup_redirect").quick-signup
+          input(type="email" name="email" placeholder="Email").quick-signup-email
+          button(type="submit" data-analytics-event="clickedSignupHeroButton").btn.btn-wrap.btn-success.btn-lg.px-4 Sign Up – It’s Free!

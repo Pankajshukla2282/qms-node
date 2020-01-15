@@ -2,21 +2,21 @@ extends ../layout
 
 block content
   h1 Questions
-  
+
   +carousel(1,ques)
 
 //- carousel caption
 mixin carousel-caption(item)
   .carousel-caption
-    unless !item.que_title
-      h1 #{item.que_title}
-    unless !item.que_description
-      p #{item.que_description}
-    unless !item.que_choices
-      ol
-        each ch_item in item.que_choices
-          li
-            option(name="choices-" + item.que_id value="#{ch_item.val}") ch_item.text
+    unless !item.title
+      h1 #{item.title}
+    unless !item.description
+      p #{item.description}
+    unless !item.options
+        each val, key in item.options
+          span.options
+            label= key
+            input(type="radio" name="choices-" + item.id value=val)
 
 //- carousel
 mixin carousel(id,items)
@@ -33,11 +33,11 @@ mixin carousel(id,items)
       each item,index in items        
         if(index === 0)
           .item.active
-            span=que_title
+            span=item.title
             +carousel-caption(item)
         else
           .item
-            span=que_title
+            span=item.title
             +carousel-caption(item)
 
     a.left.carousel-control(href="#carousel-" + id, role="button", data-slide="prev")

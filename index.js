@@ -14,7 +14,7 @@ function HTTPError (statusCode, message) {
 
 const app = express()
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/qms/', async (req, res) => {
   try {
@@ -129,6 +129,26 @@ app.delete('/qms/:id', async (req, res) => {
       statusCode: err.statusCode || 500,
       headers: { 'Content-Type': 'text/plain' },
       body: err.message || 'Could destroy fetch the Question.',
+      msg: err.message
+    })
+  }
+})
+
+app.get('/exam/:id', async (req, res) => {
+  const { id } = req.params
+  try {
+    const { Question } = await connectToDatabase()
+    const que = await Question.findAll()
+    if (!que) throw new HTTPError(404, `Question with id: ${id} was not found`)
+    res.send({
+      statusCode: 200,
+      body: JSON.stringify(que)
+    }) 
+  } catch (err) {
+    res.send({
+      statusCode: err.statusCode || 500,
+      headers: { 'Content-Type': 'text/plain' },
+      body: err.message || 'Could not fetch the Question.',
       msg: err.message
     })
   }
