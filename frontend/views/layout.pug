@@ -1,43 +1,18 @@
 // layout.pug
 block variables
 doctype html
-html
+html(lang="en")
   head
-    meta(charset="utf-8")
-    meta(http-equiv="X-UA-Compatible" content="IE=edge")
-    meta(name="viewport" content="width=device-width, initial-scale=1")
-    title= title
-    link(rel="stylesheet prefetch", href="/stylesheets/bootstrap.min.css")
-    link(rel="stylesheet", type="text/css", href="/stylesheets/style.css")
-    link(rel="stylesheet", type="text/css", href="/stylesheets/carousel.css")
-    link(rel="stylesheet", type="text/css", href="https://fonts.googleapis.com/css?family=Open+Sans:300")
-  
-  body
+    block title
+      title= title
+    include head.pug
+  body(data-track-group="Landing-Marquee" data-analytics-screen="homeScreen")
     block heading
-      header.fixed-top
-        nav#navigation.navbar.navbar-inverse.py-3
-          div.navbar-header
-            a(href="/").navbar-brand Home
-
-          div.float-right.buttons
-            ul#navigation.nav.navbar-nav
-              li
-                a(href="/login") Log In
-              li
-                a(href="/signup") Sign Up
-              li
-                a(href="/create") Create Exam set
-              li
-                a(href="/about") About & Contact
-              li
-                a(href="/policy") Privacy Policy
+      include nav.pug
+      //include header.pug
 
     block content
-
+    
     block footer
-      footer.footer
-        div.container
-          p &copy; 2020 Company, Inc. &middot; #[a(href="#") Privacy] &middot; #[a(href="#") Terms]
-
-    script(src="/js/jquery.min.js")
-    script(src="/js/bootstrap.min.js")
+      include footer.pug
+      
