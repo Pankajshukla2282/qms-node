@@ -11,7 +11,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700
 }
-
+h1 {
+  font-size: 2.5rem;
+}
 header.masthead {
   position: relative;
   background-color: #343a40;
@@ -108,6 +110,7 @@ span.options{
 #hero {
   background: linear-gradient(135deg, #0079bf,  #5067c5);
 }
+
 .pt-7, .py-7 {
   padding-top: 7rem !important;
 }
