@@ -239,3 +239,13 @@ span.options{
 .board .user.user-1 {
   background-image: url(https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/pattern-library/images/87c23234a3807e474d70ea3ab47bd8dc/user-1.png);
 }
+.img-skewed-left {
+  -webkit-perspective-origin: left center;
+  perspective-origin: left center;
+}
+.img-skewed {
+  -webkit-perspective: 1500px;
+  perspective: 1500px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
