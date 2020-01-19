@@ -1,63 +1,71 @@
-footer#footer-main
-  .footer.footer-dark.bg-gradient-primary.footer-rotate
-    .container
-      .row.pt-md
-        .col-lg-4.mb-5.mb-lg-0
-          a(href='index.html')
-            img(src='assets/img/brand/white.png' alt='Footer logo' style='height: 70px;')
-          p
-            | Purpose is a unique and beautiful collection of UI elements that are all flexible and modular. A complete and customizable solution to building the website of your dreams.
-        .col-lg-2.col-6.col-sm-4.ml-lg-auto.mb-5.mb-lg-0
-          h6.heading.mb-3 Account
-          ul.list-unstyled
-            li
-              a(href='pages/account-profile.html') Profile
-            li
-              a(href='pages/account-settings.html') Settings
-            li
-              a(href='pages/account-billing.html') Billing
-            li
-              a(href='pages/account-notifications.html') Notifications
-        .col-lg-2.col-6.col-sm-4.mb-5.mb-lg-0
-          h6.heading.mb-3 About
-          ul.list-unstyled.text-small
-            li
-              a(href='#') Services
-            li
-              a(href='#') Contact
-            li
-              a(href='#') Careers
-        .col-lg-2.col-sm-4.mb-5.mb-lg-0
-          h6.heading.mb-3 Company
-          ul.list-unstyled
-            li
-              a(href='#') Terms
-            li
-              a(href='#') Privacy
-            li
-              a(href='#') Support
-      .row.align-items-center.justify-content-md-between.py-4.mt-4.delimiter-top
-        .col-md-6
-          .copyright.text-sm.font-weight-bold.text-center.text-md-left
-            | &copy; 2018-2019 
-            a.font-weight-bold(href='https://webpixels.io' target='_blank') Webpixels
-            | . All rights reserved.
-        .col-md-6
-          ul.nav.justify-content-center.justify-content-md-end.mt-3.mt-md-0
-            li.nav-item
-              a.nav-link(href='https://dribbble.com/webpixels' target='_blank')
-                i.fab.fa-dribbble
-            li.nav-item
-              a.nav-link(href='https://www.instagram.com/webpixelsofficial' target='_blank')
-                i.fab.fa-instagram
-            li.nav-item
-              a.nav-link(href='https://github.com/webpixels' target='_blank')
-                i.fab.fa-github
-            li.nav-item
-              a.nav-link(href='https://www.facebook.com/webpixels' target='_blank')
-                i.fab.fa-facebook
+footer.global-footer(data-track-group='Footer')
+    #language-picker-container
+      select#language-picker(name='language-picker' data-analytics-event='clickedFooterLanguageSelectMenu')
+        option#choose(value='choose-one' disabled='true') Select your language&mldr;
+        option(value='cs' data-url='/cs' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Čeština') &Ccaron;e&scaron;tina
+        option(value='de' data-url='/de' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Deutsch') Deutsch
+        option(value='en' data-url='/en' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='English') English
+        option(value='en-AU' data-url='/en-AU' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='English (AU)') English (AU)
+        option(value='en-GB' data-url='/en-GB' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='English (UK)') English (UK)
+        option(value='en-US' data-url='/en-US' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='English (US)' selected='selected') English (US)
+        option(value='es' data-url='/es' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Español') Espa&ntilde;ol
+        option(value='fr' data-url='/fr' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Français') Fran&ccedil;ais
+        option(value='it' data-url='/it' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Italiano') Italiano
+        option(value='hu' data-url='/hu' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Magyar') Magyar
+        option(value='nl' data-url='/nl' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Nederlands') Nederlands
+        option(value='nb' data-url='/nb' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Norsk (bokmål)') Norsk (bokm&aring;l)
+        option(value='pl' data-url='/pl' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Polski') Polski
+        option(value='pt-BR' data-url='/pt-BR' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Português (Brasil)') Portugu&ecirc;s (Brasil)
+        option(value='fi' data-url='/fi' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Suomi') Suomi
+        option(value='sv' data-url='/sv' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Svenska') Svenska
+        option(value='vi' data-url='/vi' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Tiếng Việt') Ti&#x1EBF;ng Vi&#x1EC7;t
+        option(value='tr' data-url='/tr' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Türkçe') T&uuml;rk&ccedil;e
+        option(value='ru' data-url='/ru' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Русский') &Rcy;&ucy;&scy;&scy;&kcy;&icy;&jcy;
+        option(value='uk' data-url='/uk' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='Українська') &Ucy;&kcy;&rcy;&acy;&yicy;&ncy;&scy;&softcy;&kcy;&acy;
+        option(value='th' data-url='/th' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='ภาษาไทย') &#xE20;&#xE32;&#xE29;&#xE32;&#xE44;&#xE17;&#xE22;
+        option(value='zh-Hans' data-url='/zh-Hans' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='中文 (简体)') &#x4E2D;&#x6587; (&#x7B80;&#x4F53;)
+        option(value='zh-Hant' data-url='/zh-Hant' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='中文 (繁體)') &#x4E2D;&#x6587; (&#x7E41;&#x9AD4;)
+        option(value='ja' data-url='/ja' data-analytics-event='selectedFooterLanguageSelectMenuOption' data-analytics-language='日本語') &#x65E5;&#x672C;&#x8A9E;
+      div
+        span.dropdown-icon
+    script.
+      var slice=[].slice;!function(){var e,n;n=function(e){return encodeURIComponent(e)},e=function(e){return decodeURIComponent(e)},window.cookie={get:function(n){var t,o,i,c,l,r,u,s,a;for(t=0,o=(l=null!=(i=null!=(c=document.cookie)?c.split("; "):void 0)?i:[]).length;t<o;t++)if(s=(r=l[t].split("="))[0],a=2<=r.length?slice.call(r,1):[],(s=e(s))===n)return u=a.join("="),e(u.replace(/\\+/g," "));return null},set:function(e,t,o){var i;null==o&&(o=1),"number"==typeof o&&(o=new Date(864e5*o+ +new Date)),i=[n(e)+"="+n(String(t)),"expires="+o.toUTCString(),"path=/"],/^https:/.test(location)&&i.push("secure"),document.cookie=i.join("; ")}}}();
+    script(src='/js/languagePicker.js')
+    script.
+      var modifierKeyPresent,printTracking,showTracking,slice=[].slice;modifierKeyPresent=function(t){return t.metaKey||t.ctrlKey||t.altKey||t.shiftKey},showTracking=/hound=1/.test(document.cookie),printTracking=function(t){var e,n,r,a;if(showTracking){for(e in n="👣 ",r=[],t)(a=t[e])&&(n+="%c"+(e[0].toUpperCase()+e.substr(1))+":%c "+a+" ",r.push("color: #00f; font-weight: bold; background-color: #ddd; border-radius: 2px; padding: 0 2px;"),r.push("color: #444"));return console.log.apply(console,[n].concat(slice.call(r)))}},window.track=function(t){var e,n,r,a,o,i,c;r=t.category,e=t.action,a=t.label,o=t.property,c=t.value,n=t.callback,"function"==typeof window.ga&&window.ga("send","event",r,e,a,c,{hitCallback:n}),"function"==typeof window.sp&&window.sp("trackStructEvent",r,e,a,o,c),null!=(i=window.dataLayer)&&i.push({event:"snowplow.event",snowplowEvent:{category:r,action:e,label:a,property:o,value:c}}),printTracking({category:r,action:e,label:a,property:o,value:c})},window.trackExperiment=function(t){var e,n,r;n=t.experimentId,r=t.variationId,e=t.assignmentId,"function"==typeof window.sp&&window.sp("trackUnstructEvent",{schema:"iglu:com.trello/experiment-event/jsonschema/1-0-0",data:{experiment_id:n,variation_id:r,assignment_id:e}}),printTracking({experimentId:n,variationId:r,assignmentId:e})},window.trackUnstructEvent=function(t){var e,n,r,a,o,i,c,d;e=t.category,d=t.verb,a=t.dirObj,c=t.prepObj,o=t.indObj,i=t.method,r="","string"==typeof(n=t.context)?r=n:n&&n.toString===Object.prototype.toString&&(r=JSON.stringify(n)),"function"==typeof window.sp&&window.sp("trackUnstructEvent:cf",{schema:"iglu:com.trello/client-event/jsonschema/1-0-0",data:{ue_category:e,ue_verb:d,ue_dir_object:a,ue_prep_object:c,ue_ind_object:o,ue_method:i,ue_context:r}}),printTracking({category:e,verb:d,dirObj:a,prepObj:c,indObj:o,method:i,context:r})},$((function(){var t,e;return t=function(t,e){var n,r,a,o,i,c,d;return null!=window.ga&&(o=(r=function(e){return t.closest("["+e+"]").attr(e)})("data-track-group"),n=r("data-track"),i=r("data-track-prefix"),d=r("data-track-value"),null==n&&(n=$.trim(t.is("input")?t.val():t.text())),null!=i&&(n=i+" - "+n),null!=d&&(d=parseInt(d,10)),c=function(){return clearTimeout(a),"function"==typeof e&&e(),e=null},window.track({category:o,action:n,value:d,callback:c}),a=setTimeout(c,250),!0)},e=function(t,e){var n,r;return window.idMember&&(n={idMember:window.idMember}),!!(r={category:t.attr("data-track-category"),verb:t.attr("data-track-verb")||"click",dirObj:t.attr("data-track-direct-object"),prepObj:t.attr("data-track-prep-object"),indObj:t.attr("data-track-ind-object"),method:t.attr("data-track-method"),context:n}).category&&(window.trackUnstructEvent(r),window.setTimeout(e,250),!0)},$("body").on("click","a",(function(n){var r,a,o;if(r=$(this),o=t,r.attr("data-track-category")&&(o=e),!(r.attr("target")||n.isDefaultPrevented()||modifierKeyPresent(n)))return a=function(){var t;if((t=r.attr("href"))&&"#"!==t)return window.location=t},o(r,a)?n.preventDefault():void 0;o(r)})),$("body").on("mousedown","input[type='button']",(function(n){var r,a;return r=$(this),a=t,r.attr("data-track-category")&&(a=e),a(r)}))}));;window.trackExperiment({
+      experimentId: 'pandoraV1',
+      variationId: false ? 'hreflang' : 'control',
+      assignmentId: window.locale
+      });
+    ul.global-footer-list
+      li.global-footer-list-item
+        a.global-footer-list-item-link.quiet(href='/templates?__hstc=753710.909e26afd5ae280667d59a34c417fbba.1579439167625.1579439167625.1579439167625.1&__hssc=753710.1.1579439167626&__hsfp=1967731644' data-analytics-event='clickedTemplatesFooterLink') Templates
+      li.global-footer-list-item
+        a.global-footer-list-item-link.quiet(href='/pricing?__hstc=753710.909e26afd5ae280667d59a34c417fbba.1579439167625.1579439167625.1579439167625.1&__hssc=753710.1.1579439167626&__hsfp=1967731644' data-analytics-event='clickedPricingFooterLink') Pricing
+      li.global-footer-list-item
+        a.global-footer-list-item-link.quiet(href='/platforms?__hstc=753710.909e26afd5ae280667d59a34c417fbba.1579439167625.1579439167625.1579439167625.1&__hssc=753710.1.1579439167626&__hsfp=1967731644' data-analytics-event='clickedPlatformsFooterLink') Apps
+      li.global-footer-list-item
+        a.global-footer-list-item-link.quiet(href='https://www.atlassian.com/company/careers/trello' data-analytics-event='clickedJobsFooterLink') Jobs
+      li.global-footer-list-item
+        a.global-footer-list-item-link.quiet(target='_blank' data-analytics-event='clickedBlogFooterLink' href='http://blog.trello.com/?__hstc=753710.909e26afd5ae280667d59a34c417fbba.1579439167625.1579439167625.1579439167625.1&__hssc=753710.1.1579439167626&__hsfp=1967731644') Blog
+      li.global-footer-list-item
+        a.global-footer-list-item-link.quiet(href='http://developers.trello.com/?__hstc=753710.909e26afd5ae280667d59a34c417fbba.1579439167625.1579439167625.1579439167625.1&__hssc=753710.1.1579439167626&__hsfp=1967731644' data-analytics-event='clickedDevelopersFooterLink') Developers
+      li.global-footer-list-item
+        a.global-footer-list-item-link.quiet(href='/about?__hstc=753710.909e26afd5ae280667d59a34c417fbba.1579439167625.1579439167625.1579439167625.1&__hssc=753710.1.1579439167626&__hsfp=1967731644' data-analytics-event='clickedAboutFooterLink') About
+      li.global-footer-list-item
+        a.global-footer-list-item-link.quiet(href='http://help.trello.com/?__hstc=753710.909e26afd5ae280667d59a34c417fbba.1579439167625.1579439167625.1579439167625.1&__hssc=753710.1.1579439167626&__hsfp=1967731644' data-analytics-event='clickedHelpFooterLink') Help
+      li.global-footer-list-item
+        a.global-footer-list-item-link.quiet(href='/legal?__hstc=753710.909e26afd5ae280667d59a34c417fbba.1579439167625.1579439167625.1579439167625.1&__hssc=753710.1.1579439167626&__hsfp=1967731644' data-analytics-event='clickedLegalFooterLink') Legal
+      li.global-footer-list-item
+        a.global-footer-list-item-link.quiet(href='#' data-analytics-event='clickedCookieFooterLink' onclick='trelloCookieConsentDialog()') Cookie Settings
+      li.global-footer-list-item
+        a.global-footer-list-item-link.quiet(href='/privacy?__hstc=753710.909e26afd5ae280667d59a34c417fbba.1579439167625.1579439167625.1579439167625.1&__hssc=753710.1.1579439167626&__hsfp=1967731644' data-analytics-event='clickedPrivacyFooterLink') Privacy
+    p.global-footer-detail
+      img.atlassian-logo-small.white(src='img/atlassian-logo-white-small.svg' width='150')
+      img.atlassian-logo-small.gray(src='img/atlassian-logo-gray-small.svg' width='150')
+      |  &nbsp;&copy; Copyright 2020. All rights reserved.
 
-script(src="/jquery/jquery.min.js")
-script(src="/bootstrap/js/bootstrap.bundle.min.js")
-script(src="assets/js/purpose.core.js")
-script(src="assets/js/purpose.js")
+
+script(src="/libs/jquery/jquery.min.js")
+script(src="/libs/bootstrap/js/bootstrap.bundle.min.js")
+script(src="/js/carousel.js")
