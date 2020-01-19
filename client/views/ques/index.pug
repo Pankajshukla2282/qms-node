@@ -1,0 +1,67 @@
+extends ../layout
+
+block content
+  h1 Questions
+  
+  +carousel(1,ques)
+
+//- carousel caption
+mixin carousel-caption(item)
+  .carousel-caption
+    unless !item.que_title
+      h1 #{item.que_title}
+    unless !item.que_description
+      p #{item.que_description}
+    unless !item.que_choices
+      ol
+        each ch_item in item.que_choices
+          li
+            option(name="choices-" + item.que_id value="#{ch_item.val}") ch_item.text
+
+//- carousel
+mixin carousel(id,items)
+  .carousel.slide(id="carousel-" + id ,data-ride="carousel")
+    //- Indicators
+    ol.carousel-indicators
+      each item,index in items
+        if(index === 0)
+          li.active(data-target="#carousel-" + id, data-slide-to=index)
+        else
+          li(data-target="#carousel-" + id, data-slide-to=index)
+
+    .carousel-inner(role="listbox")
+      each item,index in items        
+        if(index === 0)
+          .item.active
+            span=que_title
+            +carousel-caption(item)
+        else
+          .item
+            span=que_title
+            +carousel-caption(item)
+
+    a.left.carousel-control(href="#carousel-" + id, role="button", data-slide="prev")
+      +icon("chevron-left")
+      span.sr-only Previous
+    a.right.carousel-control(href="#carousel-" + id, role="button", data-slide="next")
+      +icon("chevron-right")
+      span.sr-only Next
+
+//- Glyphicon
+mixin icon(name)
+  span.glyphicon(class="glyphicon-" + name,aria-hidden="true")
+	
+mixin icon-primary(name)
+  span.glyphicon.text-primary(class="glyphicon-" + name,aria-hidden="true")
+
+mixin icon-info(name)
+  span.glyphicon.text-info(class="glyphicon-" + name,aria-hidden="true")
+	
+mixin icon-warning(name)
+  span.glyphicon.text-warning(class="glyphicon-" + name,aria-hidden="true")
+	
+mixin icon-danger(name)
+  span.glyphicon.text-danger(class="glyphicon-" + name,aria-hidden="true")
+	
+mixin icon-success(name)
+  span.glyphicon.text-success(class="glyphicon-" + name,aria-hidden="true")
