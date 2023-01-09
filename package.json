@@ -16,7 +16,7 @@
     "sequelize": "^5.21.3",
     "serverless": "^1.60.5",
     "serverless-http": "^2.3.0",
-    "serverless-offline": "^5.12.1"
+    "serverless-offline": "^12.0.4"
   },
   "dependencies": {}
 }
